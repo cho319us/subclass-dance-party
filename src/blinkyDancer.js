@@ -1,6 +1,7 @@
 var BlinkyDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
-
+  // select individual dancer class and give it an imagevr
+  this.$node.addClass('cloud');
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
 };
