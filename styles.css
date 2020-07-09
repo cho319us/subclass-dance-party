@@ -26,6 +26,15 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 
+@keyframes rotate {
+  from {
+      transform: rotate(360deg);
+  }
+  to {
+      transform: rotate(0deg);
+  }
+}
+
 .cloud{
   width: 150px;
   height: auto;
@@ -40,4 +49,10 @@ body, a:link, a:visited, a:active{
   width: 150px;
   height: auto;
   content: url('src/Image/Cat.gif');
+  animation: rotate 7s linear infinite;
+}
+
+.lineUpButton{
+  padding:5px 12px;
+  float:right;
 }

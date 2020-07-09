@@ -26,7 +26,19 @@ $(document).ready(function() {
       Math.random() * 1000 + 4000
     );
     $('body').append(dancer.$node);
+    // holds values of all created dancers
     window.dancers.push(dancer);
   });
+
+  // we should create a line up button
+  $('.lineUpButton').on('click', function(event) {
+    // iterate over the created dancers
+    var container = window.dancers;
+    for (var i = 0; i < container.length; i++) {
+      // function to line up the individual icons
+      container[i].lineUp();
+    }
+  });
 });
+
 

@@ -26,3 +26,9 @@ Dancer.prototype.setPosition = function(top, left) {
   };
   this.$node.css(styleSettings);
 };
+
+// create a lineUp function
+Dancer.prototype.lineUp = function() {
+  // set animate on each dancer to line ip
+  this.$node.animate({top: '400px'}, 3000);
+};
