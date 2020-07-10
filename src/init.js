@@ -37,7 +37,54 @@ $(document).ready(function() {
     for (var i = 0; i < container.length; i++) {
       // function to line up the individual icons
       container[i].lineUp();
+
     }
+  });
+
+  // create a pair button where these pair enacts an animation.
+  $('.pairButton').on('click', function(event) {
+    // Find the random Index number of window.dancer array;
+    var randomIndexNum = Math.floor(Math.random() * window.dancers.length);
+    // randomly selects a dancer of window.dancer array as the lead
+    var lead = window.dancers[randomIndexNum];
+    // find the top distance of Lead
+    var leadTop = lead.top;
+    // find the left distance of Lead
+    var leadLeft = lead.left;
+    // declare a variable call smallest
+    var smallest;
+    // declare a variable call closestDancer
+    var closestDancer = null;
+    // iterate over window.dancers
+    for (var i = 0; i < window.dancers.length; i++) {
+      // if the current element is not the lead dancer
+      if (lead !== window.dancers[i]) {
+        // find the top distance of Current Dnacer
+        var currentDancerTop = window.dancers[i].top;
+        // find the left distance of Current Dnacer
+        var currentDancerLeft = window.dancers[i].left;
+        // find the top distance between Lead and Current Dancer
+        var topDifference = Math.abs(leadTop - currentDancerTop);
+        // find the left distance between Lead and Current Dancer
+        var leftDifference = Math.abs(leadLeft - currentDancerLeft);
+        // find the hypotenuse between Lead and Current Dancer
+        var hypotenuse = Math.sqrt(topDifference * topDifference + leftDifference * leftDifference);
+        // if the hypotenuse is less than smallest or closestDancer is undefined yet
+        if (hypotenuse < smallest || closestDancer === null) {
+          // then hypotenuse will be assign to the variables smallest
+          smallest = hypotenuse;
+          // and also the Current dancer will be assign to the variable closestDancer
+          closestDancer = window.dancers[i];
+        }
+      }
+    }
+    // closestDancer and lead
+    closestDancer.$node.slideDown("slow", function () {
+
+    });
+    lead.$node.slideDown("slow", function() {
+
+    });
   });
 });
 

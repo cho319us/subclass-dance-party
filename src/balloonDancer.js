@@ -12,4 +12,10 @@ BalloonDancer.prototype.constructor = BalloonDancer;
 BalloonDancer.prototype.step = function() {
   // call the old version of step at the beginning of any call to this new version of step
   Dancer.prototype.step.call(this);
+  this.$node.mouseover(function() {
+    $( this ).css('content', 'url(src/Image/Burst.gif)');
+  });
+  this.$node.mouseleave(function() {
+    $( this ).css('content', 'url(src/Image/Sleep.gif)');
+  });
 };

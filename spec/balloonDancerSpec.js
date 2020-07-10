@@ -12,11 +12,11 @@ describe('balloonDancer', function() {
     expect(balloonDancer.$node).to.be.an.instanceof(jQuery);
   });
 
-  // it('should have a step function that makes its node blink', function() {
-  //   sinon.spy(balloonDancer.$node, 'toggle');
-  //   balloonDancer.step();
-  //   expect(balloonDancer.$node.toggle.called).to.be.true;
-  // });
+  it('should have a step function that call mouseover function', function() {
+    sinon.spy(balloonDancer.$node, 'mouseover');
+    balloonDancer.step();
+    expect(balloonDancer.$node.mouseover.called).to.be.true;
+  });
 
   describe('dance', function() {
     it('should call step at least once per second', function() {

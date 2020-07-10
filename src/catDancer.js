@@ -12,5 +12,4 @@ CatDancer.prototype.constructor = CatDancer;
 CatDancer.prototype.step = function() {
   // call the old version of step at the beginning of any call to this new version of step
   Dancer.prototype.step.call(this);
-  // this.$node.rotate({animation: rotation 8s infinite linear});
 };
