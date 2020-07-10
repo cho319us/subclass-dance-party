@@ -78,13 +78,9 @@ $(document).ready(function() {
         }
       }
     }
-    // closestDancer and lead
-    closestDancer.$node.slideDown("slow", function () {
-
-    });
-    lead.$node.slideDown("slow", function() {
-
-    });
+    // increase size of closestDancer and lead
+    closestDancer.$node.animate({'width': '250px', 'height': '250px'}, 1500 );
+    lead.$node.animate({'width': '250px', 'height': '250px'}, 1500 );
   });
 });
 
