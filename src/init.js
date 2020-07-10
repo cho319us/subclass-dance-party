@@ -79,8 +79,8 @@ $(document).ready(function() {
       }
     }
     // increase size of closestDancer and lead
-    closestDancer.$node.animate({'width': '250px', 'height': '250px'}, 1500 );
-    lead.$node.animate({'width': '250px', 'height': '250px'}, 1500 );
+    closestDancer.$node.animate({'width': '250px', 'height': 'auto'}, 1500 );
+    lead.$node.animate({'width': '250px', 'height': 'auto'}, 1500 );
   });
 });
 
